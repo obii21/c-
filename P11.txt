@@ -1,0 +1,67 @@
+using System;
+// Abstract base class
+abstract class Shape
+{
+// Abstract methods to calculate area and perimeter
+public abstract double CalculateArea();
+public abstract double CalculatePerimeter();
+}
+// Subclass: Circle
+class Circle : Shape
+{
+private double radius;
+// Constructor
+public Circle(double radius)
+{
+this.radius = radius;
+}
+// Implementing abstract methods
+public override double CalculateArea()
+{
+return Math.PI * Math.Pow(radius, 2);
+}
+public override double CalculatePerimeter()
+{
+return 2 * Math.PI * radius;
+}
+}
+// Subclass: Triangle
+class Triangle : Shape
+{
+private double side1, side2, side3;
+// Constructor
+public Triangle(double side1, double side2, double side3)
+{
+this.side1 = side1;
+this.side2 = side2;
+this.side3 = side3;
+}
+// Implementing abstract methods
+public override double CalculateArea()
+{
+// Using Heron's formula to calculate the area of a triangle
+double s = (side1 + side2 + side3) / 2;
+return Math.Sqrt(s * (s - side1) * (s - side2) * (s - side3));
+}
+public override double CalculatePerimeter()
+{
+return side1 + side2 + side3;
+}
+}
+class Program
+{
+static void Main()
+{
+// Creating objects of Circle and Triangle
+Circle = new Circle(5);
+Triangle = new Triangle(3, 4, 5);
+// Displaying area and perimeter of Circle
+Console.WriteLine("Circle - Area: " + circle.CalculateArea() + ", Perimeter: " +
+circle.CalculatePerimeter());
+// Displaying area and perimeter of Triangle
+Console.WriteLine("Triangle - Area: " + triangle.CalculateArea() + ", Perimeter: " +
+triangle.CalculatePerimeter());
+}
+}
+Output :- Circle - Area: 78.53981633974483, Perimeter: 31.41592653589793
+Triangle - Area: 6, Perimeter: 12

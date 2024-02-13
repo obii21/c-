@@ -1,0 +1,28 @@
+using System;
+using System.IO;
+class Program
+{
+static void Main()
+{
+// Specify the path of the source and destination files
+string sourceFilePath = "D:/file1.txt";
+string destinationFilePath = "D:/file2.txt";
+// Call the CopyFile method to copy the contents
+CopyFile("D:/file1.txt","D:/file2.txt");
+Console.WriteLine("File contents copied successfully.");
+}
+static void CopyFile(string sourceFilePath, string destinationFilePath)
+{
+try
+{
+// Read all lines from the source file
+string[] lines = File.ReadAllLines("D:/file1.txt");
+// Write all lines to the destination file
+File.WriteAllLines("D:/file2.txt",lines);
+}
+catch (Exception ex)
+{
+Console.WriteLine($"An error occurred: {ex.Message}");
+}
+}
+}

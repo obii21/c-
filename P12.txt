@@ -1,0 +1,57 @@
+using System;
+// Interface defining resize methods
+interface Resizable
+{
+void ResizeWidth(int width);
+void ResizeHeight(int height);
+}
+// Class implementing the Resizable interface
+class Rectangle : Resizable
+{
+private int width;
+private int height;
+// Constructor
+public Rectangle(int width, int height)
+{
+this.width = width;
+this.height = height;
+}
+// Implementing interface methods
+public void ResizeWidth(int newWidth)
+{
+width = newWidth;
+Console.WriteLine($"Width resized to: {width}");
+}
+public void ResizeHeight(int newHeight)
+{
+height = newHeight;
+Console.WriteLine($"Height resized to: {height}");
+}
+// Method to display rectangle details
+public void DisplayDetails()
+{
+Console.WriteLine($"Rectangle - Width: {width}, Height: {height}");
+}
+}
+class Program
+{
+static void Main()
+{
+// Create an object of Rectangle
+Rectangle = new Rectangle(10, 5);
+// Display initial details
+Console.WriteLine("Initial Rectangle Details:");
+rectangle.DisplayDetails();
+// Resize width and height
+rectangle.ResizeWidth(15);
+rectangle.ResizeHeight(8);
+// Display updated details
+Console.WriteLine("\nUpdated Rectangle Details:");
+rectangle.DisplayDetails();
+}
+}
+Output :- Rectangle - Width: 10, Height: 5
+Width resized to: 15
+Height resized to: 8
+Updated Rectangle Details:
+Rectangle - Width: 15, Height: 8
