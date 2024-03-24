@@ -1,0 +1,42 @@
+class Program
+{
+ static void Main()
+ {
+ Console.Write("Enter the number of rows for Floyd's Triangle: ");
+ if (int.TryParse(Console.ReadLine(), out int rows))
+ {
+ int[][] floydsTriangle = GenerateFloydsTriangle(rows);
+ Console.WriteLine("Floyd's Triangle:");
+ PrintFloydsTriangle(floydsTriangle);
+ }
+ else
+ {
+ Console.WriteLine("Invalid input. Please enter a valid number of rows.");
+ }
+ }
+ static int[][] GenerateFloydsTriangle(int rows)
+ {
+ int[][] triangle = new int[rows][];
+ int count = 1;
+ for (int i = 0; i < rows; i++)
+ {
+ triangle[i] = new int[i + 1];
+ for (int j = 0; j <= i; j++)
+ {
+ triangle[i][j] = count++;
+ }
+ }
+return triangle;
+ }
+ static void PrintFloydsTriangle(int[][] triangle)
+ {
+ foreach (int[] row in triangle)
+ {
+ foreach (int number in row)
+ {
+ Console.Write(number + " ");
+ }
+ Console.WriteLine();
+ }
+ }
+}
