@@ -1,0 +1,32 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+public class Program
+{
+public static void Main()
+{
+int mynum,val,res,temp_var;
+int start_no,end_no;
+Console.Write("\n\n");
+Console.Write("Searching for the Armstrong number in a given range of range of numbers:\n");
+Console.Write("--------------------------------------------------------");
+Console.Write("\n\n");
+Console.Write("Enter the starting number... ");
+start_no= Convert.ToInt32(Console.ReadLine());
+Console.Write("Enter the ending number... ");
+end_no= Convert.ToInt32(Console.ReadLine());
+Console.Write("The list of Armstrong numbers in given above range are: ");
+for(mynum=start_no;mynum<=end_no;mynum++){
+temp_var=mynum;
+res = 0;
+while(temp_var!=0){
+val=temp_var % 10;
+temp_var=temp_var/10;
+res=res+(val*val*val);
+}
+if(res==mynum)
+Console.Write("{0} ",mynum);
+}
+Console.Write("\n");
+}
+}
