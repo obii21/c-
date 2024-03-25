@@ -57,7 +57,7 @@ Shape[] shapes = new Shape[]
 new Circle(), new Triangle(), new Square()
 };
 Console.WriteLine("Demonstrating Polymorphism:");
-foreach (Shape in shapes)
+foreach (Shape shape in shapes)
 {
 shape.Draw();
 shape.Erase();
